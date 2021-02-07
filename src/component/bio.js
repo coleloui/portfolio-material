@@ -9,11 +9,15 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     display: "flex",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-    width: theme.spacing(7),
-    height: theme.spacing(7),
+    // "& > *": {
+    //   margin: theme.spacing(1),
+    // },
+    width: theme.spacing(9),
+    height: theme.spacing(9),
+  },
+  bio: {
+    borderLeft: "5px solid #482880",
+    paddingLeft: "10px",
   },
 }));
 
@@ -22,14 +26,14 @@ export default function Bio() {
   return (
     <Container className={classes.top} maxWidth="lg">
       <Grid container space={3}>
-        <Grid item sm={6}>
+        <Grid item sm={1}>
           <Avatar
             className={classes.img}
             alt="Louis Coleman"
             src="./photo/louis.jpg"
           />
         </Grid>
-        <Grid item sm={6}>
+        <Grid item sm={6} className={classes.bio}>
           <Typography variant="p" color="initial">
             Minim eiusmod elit ut qui aliqua veniam dolore incididunt est ex
             irure. Adipisicing ad ullamco eu Lorem ut ea do incididunt aliquip
