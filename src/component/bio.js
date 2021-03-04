@@ -5,10 +5,14 @@ import Louis from "./Photo/Louis.jpg";
 // import linked from "./Photo/linked.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import DescriptionIcon from "@material-ui/icons/Description";
+import Resume from "./File/LouisColemanResume.pdf";
+
 const useStyles = makeStyles((theme) => ({
   top: {
     [theme.breakpoints.up("sm")]: {
       marginTop: "50px",
+      marginBottom: "50px",
     },
     marginTop: "5px",
     flexGrow: 1,
@@ -16,37 +20,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   lines: {
-    lineHeight: 2.5,
+    lineHeight: 3,
     textAlign: "left",
-  },
-  large: {
-    width: theme.spacing(25),
-    height: theme.spacing(25),
-    float: "left",
-    marginRight: "20px",
-    boxShadow: theme.shadows[3],
-  },
-  up: {
-    [theme.breakpoints.up("sm")]: {
-      marginTop: "25px",
-    },
-  },
-  down: {
-    [theme.breakpoints.up("sm")]: {
-      marginBottom: "25px",
-    },
-  },
-  img: {
-    display: "flex",
-    // "& > *": {
-    //   margin: theme.spacing(1),
-    // },
-    width: theme.spacing(9),
-    height: theme.spacing(9),
-  },
-  bio: {
     borderLeft: "5px solid #482880",
     paddingLeft: "10px",
+    fontSize: "15px",
   },
 }));
 
@@ -57,7 +35,6 @@ export default function Bio() {
       <Grid container space={3} className={classes.top} maxwidth="lg">
         <Grid item sm={1} />
         <Grid item sm={6}>
-          <Avatar alt="Louis Coleman" src={Louis} className={classes.large} />
           <p className={classes.lines}>
             I am a passionate Full Stack Web Developer from from Tampa, Florida
             currently living in Seattle, Washington. I have always had a huge
@@ -72,62 +49,6 @@ export default function Bio() {
           </p>
         </Grid>
         <Grid item sm={3} />
-        <Hidden smDown>
-          <Grid item sm={2} container direction="column">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.linkedin.com/in/louis-coleman/"
-            >
-              {" "}
-              <LinkedInIcon
-                fontSize="large"
-                color="primary"
-                className={classes.down}
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/coleloui"
-            >
-              {" "}
-              <GitHubIcon
-                fontSize="large"
-                color="primary"
-                className={classes.up}
-              />
-            </a>
-          </Grid>
-        </Hidden>
-        <Hidden smUp>
-          <Grid item sm={3} container direction="row" justify="space-around">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.linkedin.com/in/louis-coleman/"
-            >
-              {" "}
-              <LinkedInIcon
-                fontSize="large"
-                color="primary"
-                className={classes.down}
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/coleloui"
-            >
-              {" "}
-              <GitHubIcon
-                fontSize="large"
-                color="primary"
-                className={classes.up}
-              />
-            </a>
-          </Grid>
-        </Hidden>
       </Grid>
     </Container>
   );
