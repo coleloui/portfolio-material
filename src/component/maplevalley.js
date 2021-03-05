@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     "&:hover": {
       color: "gray",
+      textDecoration: "underline",
     },
   },
   center: {

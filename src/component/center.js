@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 // import Bio from "./bio";
 // import RocketList from "./rocketlist";
-import MapleValley from "./maplevalley";
-// import PokeGoDex from "./pokegodex"
+// import MapleValley from "./maplevalley";
+import PokeGoDex from "./pokegodex";
 
 const useStyles = makeStyles((theme) => ({
   top: {
@@ -32,7 +32,8 @@ export default function Center() {
       <Grid item>
         {/* <Bio /> */}
         {/* <RocketList /> */}
-        <MapleValley />
+        {/* <MapleValley /> */}
+        <PokeGoDex />
       </Grid>
     </Grid>
   );
