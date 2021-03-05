@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Avatar, Grid, Container, Hidden } from "@material-ui/core";
+import { Avatar, Grid, Container, IconButton } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
@@ -18,13 +18,14 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[3],
     marginBottom: "10px",
   },
-
   center: {
     color: "#482880",
     marginLeft: "10px",
     marginRight: "10px",
+    fontSize: 75,
     "&:hover": {
       color: "gray",
+      transition: "all .2s ease-in-out",
     },
   },
   heads: {
@@ -56,30 +57,28 @@ export default function BigFoot() {
                 >
                   <Grid item>
                     <a
-                      className={classes.center}
                       target="_blank"
                       rel="noreferrer"
                       href="https://github.com/coleloui"
                     >
                       {" "}
-                      <GitHubIcon fontSize="large" />
+                      <GitHubIcon className={classes.center} />
                     </a>
                   </Grid>
                   <Grid item>
                     <a
-                      className={classes.center}
                       target="_blank"
                       rel="noreferrer"
                       href="https://www.linkedin.com/in/louis-coleman/"
                     >
                       {" "}
-                      <LinkedInIcon fontSize="large" />
+                      <LinkedInIcon className={classes.center} />
                     </a>
                   </Grid>
                   <Grid item>
-                    <a className={classes.center} download href={Resume}>
+                    <a download href={Resume}>
                       {" "}
-                      <DescriptionIcon fontSize="large" />
+                      <DescriptionIcon className={classes.center} />
                     </a>
                   </Grid>
                 </Grid>
