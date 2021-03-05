@@ -6,6 +6,7 @@ import {
   TextField,
   InputAdornment,
   FormControl,
+  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -18,6 +19,18 @@ const useStyles = makeStyles((theme) => ({
   },
   colorMe: {
     color: "#482880",
+  },
+  send: {
+    marginTop: "15px",
+    color: "#482880",
+    fontSize: 25,
+    "&:hover": {
+      color: "#FFFFFF",
+      backgroundColor: "#482880",
+    },
+  },
+  right: {
+    marginRight: "15px",
   },
 }));
 
@@ -87,7 +100,7 @@ export default function Contact() {
             style={{ display: "none" }}
           />
           <Grid item container alignItems="center" direction="row">
-            <Grid item>
+            <Grid item className={classes.right}>
               <Grid container direction="column">
                 <FormControl>
                   <Input
@@ -117,14 +130,16 @@ export default function Contact() {
                     }
                   />
                 </FormControl>
+                <Button className={classes.send}>Send!</Button>
               </Grid>
             </Grid>
             <Grid item>
               <FormControl>
                 <TextField
+                  required
                   label="Give me some info!"
                   multiline
-                  rows={4}
+                  rows={6}
                   name="message"
                   onChange={handleChange}
                   value={formData.message}

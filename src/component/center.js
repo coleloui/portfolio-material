@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Bio() {
+export default function Center() {
   const classes = useStyles();
   return (
     <Container className={classes.top} maxwidth="lg">

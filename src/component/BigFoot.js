@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Avatar, Grid, Container, IconButton } from "@material-ui/core";
+import { Avatar, Grid } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 75,
     "&:hover": {
       color: "gray",
-      transition: "all .2s ease-in-out",
     },
   },
   heads: {
@@ -38,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
 export default function BigFoot() {
   const classes = useStyles();
   return (
-    <Grid container alignItems="center" space={3} maxWidth="lg" direction="row">
-      <Grid item direction="column" sm={5}>
+    <Grid container alignItems="center" space={2} direction="row">
+      <Grid item sm={5}>
         <Grid
           container
           alignItems="center"
@@ -90,14 +89,11 @@ export default function BigFoot() {
                   className={classes.large}
                 />
               </Grid>
-              <Grid item>
-                <ContactMailIcon fontSize="large" className={classes.center} />
-              </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-      <Grid item size={5} direction="column">
+      <Grid item size={5}>
         <Grid container direction="row">
           <Grid item>
             <Contact />
