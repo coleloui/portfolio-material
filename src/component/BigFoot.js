@@ -4,9 +4,8 @@ import { Avatar, Grid } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
-import ContactMailIcon from "@material-ui/icons/ContactMail";
 import Resume from "./File/LouisColemanResume.pdf";
-import Louis from "./Photo/Louis.jpg";
+import Louis from "./Photo/LouisHappyCrop.jpg";
 import Contact from "./contact";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "10px",
     width: theme.spacing(25),
     height: theme.spacing(25),
-    boxShadow: theme.shadows[3],
+    boxShadow: theme.shadows[10],
     marginBottom: "10px",
   },
   center: {
@@ -32,12 +31,24 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "center",
     },
   },
+  tails: {
+    [theme.breakpoints.up("sm")]: {
+      bottom: "0",
+      position: "fixed",
+    },
+  },
 }));
 
 export default function BigFoot() {
   const classes = useStyles();
   return (
-    <Grid container alignItems="center" space={2} direction="row">
+    <Grid
+      container
+      alignItems="center"
+      space={2}
+      direction="row"
+      className={classes.tails}
+    >
       <Grid item sm={5}>
         <Grid
           container
@@ -71,7 +82,10 @@ export default function BigFoot() {
                       href="https://www.linkedin.com/in/louis-coleman/"
                     >
                       {" "}
-                      <LinkedInIcon className={classes.center} />
+                      <LinkedInIcon
+                        href="https://www.linkedin.com/in/louis-coleman/"
+                        className={classes.center}
+                      />
                     </a>
                   </Grid>
                   <Grid item>
