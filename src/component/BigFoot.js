@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   center: {
     color: "#482880",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.6))",
     marginLeft: "10px",
     marginRight: "10px",
     fontSize: 75,

@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Grid, makeStyles } from "@material-ui/core";
 import PokeGoDexPic from "./Photo/pogodex.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import LaunchIcon from "@material-ui/icons/Launch";
 
 const useStyles = makeStyles((theme) => ({
   lines: {
@@ -19,21 +20,20 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "10px",
     fontSize: "15px",
   },
-  middle: {
-    fontWeight: "bold",
-  },
   large: {
     marginTop: "20px",
-    marginRight: "10px",
+    marginRight: "20px",
+    marginLeft: theme.spacing(10),
     width: theme.spacing(75),
     height: "auto",
-    boxShadow: theme.shadows[10],
+    boxShadow: theme.shadows[15],
     marginBottom: "10px",
     borderRadius: "15px",
   },
   link: {
     color: "#482880",
     textDecoration: "none",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
     "&:hover": {
       color: "gray",
       textDecoration: "underline",
@@ -42,18 +42,23 @@ const useStyles = makeStyles((theme) => ({
   center: {
     color: "#482880",
     marginRight: "10px",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.25))",
     fontSize: 50,
     "&:hover": {
       color: "gray",
     },
   },
+  jump: {
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
+    fontWeight: "bold",
+    marginLeft: "10px",
+  },
 }));
 
-export default function MapleValley() {
+export default function PokeGoDex() {
   const classes = useStyles();
   return (
     <Grid container direction="row" alignItems="center">
-      <Grid item sm={1} />
       <Grid item>
         <a
           href="https://dionleung14.github.io/Pokemon-GO-Virtual-Dex/"
@@ -62,7 +67,7 @@ export default function MapleValley() {
         >
           <img
             src={PokeGoDexPic}
-            alt="maple valley camp"
+            alt="pokegodex home"
             className={classes.large}
           />
         </a>
@@ -70,10 +75,7 @@ export default function MapleValley() {
       <Grid item sm={4}>
         <Grid container direction="column" className={classes.divider}>
           <Grid item>
-            <Typography
-              style={{ fontWeight: "bold", marginLeft: "10px" }}
-              variant="h3"
-            >
+            <Typography className={classes.jump} variant="h3">
               Pok&eacute;GoDex{" "}
               <a
                 href="https://github.com/dionleung14/Pokemon-GO-Virtual-Dex"
@@ -81,6 +83,13 @@ export default function MapleValley() {
                 rel="noreferrer"
               >
                 <GitHubIcon className={classes.center} />
+              </a>
+              <a
+                href="https://dionleung14.github.io/Pokemon-GO-Virtual-Dex/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LaunchIcon className={classes.center} />
               </a>
             </Typography>
             <p className={classes.lines}>
@@ -93,7 +102,7 @@ export default function MapleValley() {
             </p>
           </Grid>
           <Grid item className={classes.tech}>
-            <Typography variant="h4" className={classes.middle}>
+            <Typography variant="h4" className={classes.jump}>
               Built Using:
             </Typography>
             <a

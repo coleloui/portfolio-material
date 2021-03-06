@@ -1,29 +1,181 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   lines: {
     lineHeight: 3,
     textAlign: "left",
-    borderLeft: "5px solid #482880",
     paddingLeft: "10px",
     fontSize: "15px",
+  },
+  tech: {
+    lineHeight: 2,
+    textAlign: "left",
+    paddingLeft: "10px",
+    fontSize: "15px",
+  },
+  divider: {
+    marginLeft: theme.spacing(60),
+    borderLeft: "5px solid #482880",
+  },
+  jump: {
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
+    fontWeight: "bold",
+    marginLeft: "10px",
+  },
+  link: {
+    color: "#482880",
+    textDecoration: "none",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
+    "&:hover": {
+      color: "gray",
+      textDecoration: "underline",
+    },
+  },
+  nolink: {
+    color: "#482880",
+    textDecoration: "none",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
   },
 }));
 
 export default function Bio() {
   const classes = useStyles();
   return (
-    <p className={classes.lines}>
-      I am a passionate Full Stack Web Developer from from Tampa, Florida
-      currently living in Seattle, Washington. I have always had a huge
-      fascination in computers with an emphasis on gaming which has evolved over
-      time into a love of coding. Initially, it was something I lightly dabbled
-      in during my spare time which then turned more serious as I recently
-      graduated (May 2020) from the University of Washington Full Stack Coding
-      Bootcamp where I became proficient in HTML5, CSS, JavaScript, jQuery,
-      Java, Bootstrap, Tailwind CSS, Express.js, React.js, Node.js, Database
-      Theory, MongoDB, MySQL, CLI, and Git.
-    </p>
+    <Grid container direction="row" alignItems="center">
+      <Grid item sm={4}>
+        <Grid container direction="column" className={classes.divider}>
+          <Grid item>
+            <p className={classes.lines}>
+              I am a passionate Full Stack Web Developer from from Tampa,
+              Florida currently living in Seattle, Washington. I have always had
+              a huge fascination in computers with an emphasis on gaming which
+              has evolved over time into a love of coding. Initially, it was
+              something I lightly dabbled in during my spare time which then
+              turned more serious as I recently graduated (May 2020) from the
+              University of Washington Full Stack Coding Bootcamp.
+            </p>
+          </Grid>
+          <Grid item className={classes.tech}>
+            <Typography variant="h4" className={classes.jump}>
+              Some of the technologies I use:
+            </Typography>
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
+            >
+              HTML5,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+            >
+              CSS,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://www.javascript.com/"
+            >
+              JavaScript,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://jquery.com/"
+            >
+              JQuery,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://getbootstrap.com/"
+            >
+              Bootstrap,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://material-ui.com/"
+            >
+              Material-UI,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://tailwindcss.com/"
+            >
+              Tailwind CSS,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://expressjs.com/"
+            >
+              Express.js,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://expressjs.com/"
+            >
+              React.js,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://expressjs.com/"
+            >
+              Node.js,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://expressjs.com/"
+            >
+              MongoDB,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://expressjs.com/"
+            >
+              MySQL,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Command-line_interface"
+            >
+              CLI,
+            </a>{" "}
+            <a
+              rel="noopener noreferrer"
+              className={classes.link}
+              target="_blank"
+              href="https://git-scm.com/"
+            >
+              Git,
+            </a>{" "}
+            <span className={classes.nolink}>and Database Theory.</span>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }

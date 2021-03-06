@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Grid, makeStyles } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import LaunchIcon from "@material-ui/icons/Launch";
 import RocketListPic from "./Photo/RocketList.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "10px",
     fontSize: "15px",
   },
-  middle: {
-    fontWeight: "bold",
-  },
   large: {
     marginTop: "20px",
     marginRight: "20px",
@@ -35,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: "#482880",
     textDecoration: "none",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
     "&:hover": {
       color: "gray",
       textDecoration: "underline",
@@ -43,10 +42,16 @@ const useStyles = makeStyles((theme) => ({
   center: {
     color: "#482880",
     marginRight: "10px",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.25))",
     fontSize: 50,
     "&:hover": {
       color: "gray",
     },
+  },
+  jump: {
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
+    fontWeight: "bold",
+    marginLeft: "10px",
   },
 }));
 
@@ -60,16 +65,17 @@ export default function RocketList() {
           target="_blank"
           href="http://rocketlist.herokuapp.com/"
         >
-          <img src={RocketListPic} className={classes.large} />
+          <img
+            src={RocketListPic}
+            alt="RocketList home"
+            className={classes.large}
+          />
         </a>
       </Grid>
       <Grid item sm={4}>
         <Grid container direction="column" className={classes.divider}>
           <Grid item>
-            <Typography
-              style={{ fontWeight: "bold", marginLeft: "10px" }}
-              variant="h3"
-            >
+            <Typography className={classes.jump} variant="h3">
               RocketList{" "}
               <a
                 href="https://github.com/meganjacobs97/RocketList"
@@ -77,6 +83,13 @@ export default function RocketList() {
                 rel="noreferrer"
               >
                 <GitHubIcon className={classes.center} />
+              </a>
+              <a
+                href="http://rocketlist.herokuapp.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LaunchIcon className={classes.center} />
               </a>
             </Typography>
             <span></span>
@@ -89,7 +102,7 @@ export default function RocketList() {
             </p>
           </Grid>
           <Grid item className={classes.tech}>
-            <Typography variant="h4" className={classes.middle}>
+            <Typography variant="h4" className={classes.jump}>
               Built Using:
             </Typography>
             <a

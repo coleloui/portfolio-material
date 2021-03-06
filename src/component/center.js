@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
-// import Bio from "./bio";
-// import RocketList from "./rocketlist";
-// import MapleValley from "./maplevalley";
+import Bio from "./bio";
+import RocketList from "./rocketlist";
+import MapleValley from "./maplevalley";
 import PokeGoDex from "./pokegodex";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,10 +30,10 @@ export default function Center() {
   return (
     <Grid container space={3} className={classes.top} maxwidth="lg">
       <Grid item>
-        {/* <Bio /> */}
+        <Bio />
         {/* <RocketList /> */}
         {/* <MapleValley /> */}
-        <PokeGoDex />
+        {/* <PokeGoDex /> */}
       </Grid>
     </Grid>
   );

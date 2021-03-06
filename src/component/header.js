@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   big: {
     fontWeight: "bold",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
   },
 }));
 

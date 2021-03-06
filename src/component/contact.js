@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   new: {
     fontWeight: "bold",
     borderBottom: "5px solid #482880",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.25))",
   },
   colorMe: {
     color: "#482880",
