@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Grid, makeStyles } from "@material-ui/core";
-import PokeGoDexPic from "./Photo/pogodex.png";
+import PokeGoDexPic from "../Photo/pogodex.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LaunchIcon from "@material-ui/icons/Launch";
 
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   center: {
     color: "#482880",
-    marginRight: "10px",
+    marginLeft: "25px",
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.25))",
     fontSize: 50,
     "&:hover": {
@@ -72,7 +72,7 @@ export default function PokeGoDex() {
           />
         </a>
       </Grid>
-      <Grid item sm={4}>
+      <Grid item sm={5}>
         <Grid container direction="column" className={classes.divider}>
           <Grid item>
             <Typography className={classes.jump} variant="h3">

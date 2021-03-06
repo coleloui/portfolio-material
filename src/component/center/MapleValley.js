@@ -1,8 +1,8 @@
 import React from "react";
 import { Typography, Grid, makeStyles } from "@material-ui/core";
+import MapleValleyPic from "../Photo/MapleValley.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LaunchIcon from "@material-ui/icons/Launch";
-import RocketListPic from "./Photo/RocketList.png";
 
 const useStyles = makeStyles((theme) => ({
   lines: {
@@ -19,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     paddingLeft: "10px",
     fontSize: "15px",
+  },
+  jump: {
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
+    fontWeight: "bold",
+    marginLeft: "10px",
   },
   large: {
     marginTop: "20px",
@@ -41,64 +46,58 @@ const useStyles = makeStyles((theme) => ({
   },
   center: {
     color: "#482880",
-    marginRight: "10px",
+    marginLeft: "25px",
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.25))",
     fontSize: 50,
     "&:hover": {
       color: "gray",
     },
   },
-  jump: {
-    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
-    fontWeight: "bold",
-    marginLeft: "10px",
-  },
 }));
 
-export default function RocketList() {
+export default function MapleValley() {
   const classes = useStyles();
   return (
     <Grid container direction="row" alignItems="center">
       <Grid item>
         <a
-          rel="noopener noreferrer"
+          href="https://protected-lowlands-08660.herokuapp.com/"
           target="_blank"
-          href="http://rocketlist.herokuapp.com/"
+          rel="noreferrer"
         >
           <img
-            src={RocketListPic}
-            alt="RocketList home"
+            alt="maplevalleycamp"
+            src={MapleValleyPic}
             className={classes.large}
           />
         </a>
       </Grid>
-      <Grid item sm={4}>
+      <Grid item sm={5}>
         <Grid container direction="column" className={classes.divider}>
           <Grid item>
             <Typography className={classes.jump} variant="h3">
-              RocketList{" "}
+              Maple Valley{" "}
               <a
-                href="https://github.com/meganjacobs97/RocketList"
+                href="https://github.com/coleloui/MapleValley"
                 target="_blank"
                 rel="noreferrer"
               >
                 <GitHubIcon className={classes.center} />
               </a>
               <a
-                href="http://rocketlist.herokuapp.com/"
+                href="https://protected-lowlands-08660.herokuapp.com/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <LaunchIcon className={classes.center} />
               </a>
             </Typography>
-            <span></span>
             <p className={classes.lines}>
-              is a React website built with inspiration from Craigslist, Yahoo
-              Answers, and Reddit. It allows for different topics and for people
-              to make a post where others can make comments. We also added a
-              feature that allows users to join chat rooms within a specific
-              post where they can discuss the topic at hand in more depth.
+              is an online registration system for volunteers and parents of
+              campers attending the Girl Scouts Maple Valley Day Camp. This will
+              replace paper registration and facilitate camp planning by
+              allowing registration details to be easily shared to the camp
+              planning committee.
             </p>
           </Grid>
           <Grid item className={classes.tech}>
@@ -109,90 +108,81 @@ export default function RocketList() {
               className={classes.link}
               rel="noopener noreferrer"
               target="_blank"
-              href="https://www.apollographql.com/"
+              href="https://expressjs.com/"
             >
-              apollo/graphql
+              express
             </a>
             ,{" "}
             <a
               className={classes.link}
               rel="noopener noreferrer"
               target="_blank"
-              href="https://react-redux.js.org/"
+              href="https://www.npmjs.com/package/express-handlebars"
             >
-              React Redux
+              express-handlebars
             </a>
             ,{" "}
             <a
               className={classes.link}
               rel="noopener noreferrer"
               target="_blank"
-              href="https://www.npmjs.com/package/popper.js"
+              href="https://www.npmjs.com/package/express-session"
             >
-              popper.js
+              express-session
             </a>
             ,{" "}
             <a
               className={classes.link}
               rel="noopener noreferrer"
               target="_blank"
-              href="https://www.npmjs.com/package/query-string"
+              href="https://sequelize.org/"
             >
-              query-string
+              sequelize
             </a>
             ,{" "}
             <a
-              className={classes.link}
               rel="noopener noreferrer"
+              className={classes.link}
               target="_blank"
-              href="https://www.npmjs.com/package/react"
+              href="https://www.npmjs.com/package/connect-session-sequelize"
             >
-              react
+              connect-session-sequelize
             </a>
             ,{" "}
             <a
-              className={classes.link}
               rel="noopener noreferrer"
+              className={classes.link}
               target="_blank"
-              href="https://www.npmjs.com/package/react-emoji"
+              href="https://www.npmjs.com/package/mysql2"
             >
-              react-emoji
+              mysql2
             </a>
             ,{" "}
             <a
-              className={classes.link}
               rel="noopener noreferrer"
+              className={classes.link}
               target="_blank"
-              href="https://www.npmjs.com/package/react-scroll-to-bottom"
+              href="https://www.npmjs.com/package/bcrypt"
             >
-              react-scroll-to-bottom
+              bcrypt
             </a>
             ,{" "}
             <a
-              className={classes.link}
               rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.npmjs.com/package/react-spinners"
-            >
-              react-spinners
-            </a>
-            ,{" "}
-            <a
               className={classes.link}
-              rel="noopener noreferrer"
               target="_blank"
-              href="https://www.npmjs.com/package/socket.io-client"
+              href="https://nodemailer.com/about/"
             >
-              socket.io-client
+              nodemailer
             </a>
             , and{" "}
             <a
-              className={classes.link}
               rel="noopener noreferrer"
+              className={classes.link}
               target="_blank"
-              href="https://www.npmjs.com/package/tailwindcss"
+              href="https://bulma.io/"
             >
-              tailwindcss.
+              Bulma.
             </a>
           </Grid>
         </Grid>

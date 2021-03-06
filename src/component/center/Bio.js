@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles, Grid, Typography } from "@material-ui/core";
+import Niko from "../Photo/Niko.jpg";
 
 const useStyles = makeStyles((theme) => ({
   lines: {
@@ -15,13 +16,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "15px",
   },
   divider: {
-    marginLeft: theme.spacing(60),
     borderLeft: "5px solid #482880",
   },
   jump: {
-    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
     fontWeight: "bold",
-    marginLeft: "10px",
   },
   link: {
     color: "#482880",
@@ -37,13 +36,26 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
   },
+  large: {
+    marginTop: "20px",
+    marginRight: "20px",
+    marginLeft: theme.spacing(30),
+    width: theme.spacing(42),
+    height: theme.spacing(47),
+    boxShadow: theme.shadows[15],
+    marginBottom: "10px",
+    borderRadius: "15px",
+  },
 }));
 
 export default function Bio() {
   const classes = useStyles();
   return (
     <Grid container direction="row" alignItems="center">
-      <Grid item sm={4}>
+      <Grid item>
+        <img alt="Louis and Niko" src={Niko} className={classes.large} />
+      </Grid>
+      <Grid item sm={6}>
         <Grid container direction="column" className={classes.divider}>
           <Grid item>
             <p className={classes.lines}>
@@ -172,7 +184,7 @@ export default function Bio() {
             >
               Git,
             </a>{" "}
-            <span className={classes.nolink}>and Database Theory.</span>
+            <span className={classes.nolink}>Database Theory and more!</span>
           </Grid>
         </Grid>
       </Grid>

@@ -1,6 +1,12 @@
 import React from "react";
-import Home from "./page/home";
+import Cssbaseline from "@material-ui/core/CssBaseline";
+import Home from "./pages/Home";
 
 export default function App() {
-  return <Home />;
+  return (
+    <React.Fragment>
+      <Cssbaseline />
+      <Home />;
+    </React.Fragment>
+  );
 }

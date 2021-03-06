@@ -131,7 +131,9 @@ export default function Contact() {
                     }
                   />
                 </FormControl>
-                <Button className={classes.send}>Send!</Button>
+                <Button type="submit" className={classes.send}>
+                  Send!
+                </Button>
               </Grid>
             </Grid>
             <Grid item>

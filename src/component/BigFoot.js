@@ -6,7 +6,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
 import Resume from "./File/LouisColemanResume.pdf";
 import Louis from "./Photo/LouisHappyCrop.jpg";
-import Contact from "./contact";
+import Contact from "./Contact";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tails: {
     [theme.breakpoints.up("sm")]: {
-      bottom: "0",
+      bottom: 0,
       position: "fixed",
     },
   },

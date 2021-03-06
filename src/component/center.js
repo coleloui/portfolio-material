@@ -1,10 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
-import Bio from "./bio";
-import RocketList from "./rocketlist";
-import MapleValley from "./maplevalley";
-import PokeGoDex from "./pokegodex";
+import { makeStyles, Grid } from "@material-ui/core";
+import Bio from "./center/Bio";
+// import RocketList from "./center/RocketList";
+// import MapleValley from "./center/MapleValley";
+// import PokeGoDex from "./center/PokeGoDex";
 
 const useStyles = makeStyles((theme) => ({
   top: {
@@ -15,13 +14,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "flex",
     alignItems: "center",
-  },
-  lines: {
-    lineHeight: 3,
-    textAlign: "left",
-    borderLeft: "5px solid #482880",
-    paddingLeft: "10px",
-    fontSize: "15px",
   },
 }));
 
