@@ -1,5 +1,6 @@
 import React from "react";
-import { makeStyles, Grid, Typography } from "@material-ui/core";
+import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import MapleValley from "../Photo/MapleValley.png";
 
@@ -41,19 +42,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RightValley() {
   const classes = useStyles();
+
+  const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
+
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      className={classes.walls}
-    >
-      <Typography variant="h4" className={classes.looks}>
-        Maple Valley
-      </Typography>
-      <div title="Maple Valley" className={classes.size}>
-        <FullscreenIcon className={classes.noshow} />
-      </div>
-    </Grid>
+    <Grow in={MapleValleyRight}>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        className={classes.walls}
+      >
+        <Typography variant="h4" className={classes.looks}>
+          Maple Valley
+        </Typography>
+        <div title="Maple Valley" className={classes.size}>
+          <FullscreenIcon className={classes.noshow} />
+        </div>
+      </Grid>
+    </Grow>
   );
 }

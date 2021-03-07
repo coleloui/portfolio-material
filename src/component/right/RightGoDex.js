@@ -1,5 +1,6 @@
 import React from "react";
-import { makeStyles, Grid, Typography } from "@material-ui/core";
+import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import PokePic from "../Photo/pogodex.png";
 
@@ -41,20 +42,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RightGoDex() {
   const classes = useStyles();
+
+  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      className={classes.walls}
-    >
-      <Typography variant="h4" className={classes.looks}>
-        Pok&eacute;GoDex
-      </Typography>
-      <div title="pokemon go dex" className={classes.size}>
-        {" "}
-        <FullscreenIcon className={classes.noshow} />
-      </div>
-    </Grid>
+    <Grow in={PokeGoDexRight}>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        className={classes.walls}
+      >
+        <Typography variant="h4" className={classes.looks}>
+          Pok&eacute;GoDex
+        </Typography>
+        <div title="pokemon go dex" className={classes.size}>
+          {" "}
+          <FullscreenIcon className={classes.noshow} />
+        </div>
+      </Grid>
+    </Grow>
   );
 }

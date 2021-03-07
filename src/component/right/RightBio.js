@@ -1,5 +1,6 @@
 import React from "react";
-import { makeStyles, Grid, Typography } from "@material-ui/core";
+import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Niko from "../Photo/Niko.jpg";
 
@@ -39,21 +40,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RightGoDex() {
+export default function RightBio() {
   const classes = useStyles();
+
+  const BioRight = useSelector((state) => state.BioRight);
+
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      className={classes.walls}
-    >
-      <Typography variant="h4" className={classes.looks}>
-        About Me!
-      </Typography>
-      <div title="Louis & Niko" className={classes.size}>
-        <FullscreenIcon className={classes.noshow} />
-      </div>
-    </Grid>
+    <Grow in={BioRight}>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        className={classes.walls}
+      >
+        <Typography variant="h4" className={classes.looks}>
+          About Me
+        </Typography>
+        <div title="Louis & Niko" className={classes.size}>
+          <FullscreenIcon className={classes.noshow} />
+        </div>
+      </Grid>
+    </Grow>
   );
 }
