@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Center() {
+function Center() {
   const classes = useStyles();
 
   const Bio = useSelector((state) => state.Bio);
@@ -37,3 +37,5 @@ export default function Center() {
     </Grid>
   );
 }
+
+export default Center;

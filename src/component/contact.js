@@ -4,13 +4,11 @@ import {
   Typography,
   Input,
   TextField,
-  InputAdornment,
   FormControl,
   Button,
+  InputLabel,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import EmailIcon from "@material-ui/icons/Email";
 
 const useStyles = makeStyles((theme) => ({
   new: {
@@ -141,31 +139,23 @@ export default function Contact() {
             <Grid item className={classes.right}>
               <Grid container direction="column">
                 <FormControl>
+                  <InputLabel htmlFor="name">Name</InputLabel>
                   <Input
                     required
                     name="name"
                     type="text"
                     value={formData.name}
                     onChange={handleChange}
-                    startAdornment={
-                      <InputAdornment position="start">
-                        <AccountCircle className={classes.colorMe} />
-                      </InputAdornment>
-                    }
                   />
                 </FormControl>
                 <FormControl>
+                  <InputLabel htmlFor="Email">Email</InputLabel>
                   <Input
                     required
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    startAdornment={
-                      <InputAdornment position="start">
-                        <EmailIcon className={classes.colorMe} />
-                      </InputAdornment>
-                    }
                   />
                 </FormControl>
                 <Button type="submit" className={classes.send}>
