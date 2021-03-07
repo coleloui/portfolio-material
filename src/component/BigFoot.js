@@ -6,7 +6,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import DescriptionIcon from "@material-ui/icons/Description";
 import Resume from "./File/LouisColemanResume.pdf";
 import Louis from "./Photo/LouisHappyCrop.jpg";
-// import Contact from "./Contact";
+import Contact from "./Contact";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -108,13 +108,13 @@ export default function BigFoot() {
           </Grid>
         </Grid>
       </Grid>
-      {/* <Grid item size={5}>
+      <Grid item size={5}>
         <Grid container direction="row">
           <Grid item>
             <Contact />
           </Grid>
         </Grid>
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 }

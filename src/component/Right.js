@@ -4,57 +4,70 @@ import { useSelector, useDispatch } from "react-redux";
 import RightValley from "./right/RightValley";
 import RightList from "./right/RightList";
 import RightGoDex from "./right/RightGoDex";
-// import RightBio from "./right/RightBio";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import { SHOW, BIO, ROCKETLIST, MAPLEVALLEY, POKEGODEX } from "../actions";
+import RightBio from "./right/RightBio";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import { SHOW } from "../actions";
 
 const useStyles = makeStyles((theme) => ({
   show: {
     height: theme.spacing(10),
     width: theme.spacing(10),
-    color: "#482880",
     display: "block",
-    "&:hover": {
-      cursor: "pointer",
-    },
+    color: "#482880",
+    margin: "auto",
+  },
+  projects: {
+    textAlign: "center",
+    fontSize: 25,
   },
 }));
 
 export default function Right() {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const RocketListRight = useSelector((state) => state.RocketListRight);
   const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
   const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
   const RightSide = useSelector((state) => state.RightSide);
 
-  const load = () => {
-    dispatch(SHOW());
-    dispatch(BIO());
+  const ripBrain = () => {
+    if (RocketListRight && PokeGoDexRight === true) {
+      return (
+        <Grid item>
+          <RightBio />
+        </Grid>
+      );
+    }
     if (MapleValleyRight && PokeGoDexRight === true) {
-      dispatch(ROCKETLIST());
+      return (
+        <Grid item>
+          <RightBio />
+        </Grid>
+      );
     }
-    if (MapleValleyRight === false) {
-      dispatch(MAPLEVALLEY());
-    }
-    if (PokeGoDexRight === false) {
-      dispatch(POKEGODEX());
+    if (MapleValleyRight && RocketListRight === true) {
+      return (
+        <Grid item>
+          <RightBio />
+        </Grid>
+      );
     }
   };
 
   return (
-    <Grid container diretion="column" justify="center">
+    <Grid container diretion="column" alignContent="center" justify="center">
       {RightSide ? (
         <Grid item>
-          <h1>
-            Projects
-            <KeyboardArrowDownIcon
+          <h2 className={classes.projects}>
+            Check out my projects
+            <ExpandMoreIcon
               className={classes.show}
               onClick={() => {
-                load();
+                dispatch(SHOW());
               }}
             />
-          </h1>
+          </h2>
         </Grid>
       ) : (
         ""
@@ -63,16 +76,22 @@ export default function Right() {
         ""
       ) : (
         <Grid item>
-          <h1>
-            About Me
-            <KeyboardArrowUpIcon
-              className={classes.show}
-              onClick={() => {
-                load();
-              }}
-            />
-          </h1>
+          <ExpandLessIcon
+            className={classes.show}
+            onClick={() => {
+              dispatch(SHOW());
+            }}
+          />
         </Grid>
+      )}
+      {RightSide ? (
+        ""
+      ) : RocketListRight ? (
+        <Grid item>
+          <RightList />
+        </Grid>
+      ) : (
+        ripBrain()
       )}
       {RightSide ? (
         ""
@@ -81,9 +100,7 @@ export default function Right() {
           <RightValley />
         </Grid>
       ) : (
-        <Grid item>
-          <RightList />
-        </Grid>
+        ripBrain()
       )}
       {RightSide ? (
         ""
@@ -92,9 +109,7 @@ export default function Right() {
           <RightGoDex />
         </Grid>
       ) : (
-        <Grid item>
-          <RightList />
-        </Grid>
+        ripBrain()
       )}
     </Grid>
   );

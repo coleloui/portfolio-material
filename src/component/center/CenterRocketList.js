@@ -18,8 +18,13 @@ const useStyles = makeStyles((theme) => ({
   tech: {
     lineHeight: 2,
     textAlign: "left",
-    paddingLeft: "10px",
+    marginLeft: "10px",
     fontSize: "15px",
+  },
+  jump: {
+    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
+    fontWeight: "bold",
+    marginLeft: "10px",
   },
   large: {
     marginTop: "20px",
@@ -48,11 +53,6 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "gray",
     },
-  },
-  jump: {
-    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
-    fontWeight: "bold",
-    marginLeft: "10px",
   },
 }));
 
@@ -97,109 +97,110 @@ export default function RocketList() {
                   <LaunchIcon className={classes.center} />
                 </a>
               </Typography>
-              <span></span>
               <p className={classes.lines}>
-                is a React website built with inspiration from Craigslist, Yahoo
-                Answers, and Reddit. It allows for different topics and for
-                people to make a post where others can make comments. We also
-                added a feature that allows users to join chat rooms within a
-                specific post where they can discuss the topic at hand in more
-                depth.
+                This application is a React website built with inspiration from
+                Craigslist, Yahoo Answers, and Reddit. It allows for different
+                topics and for people to make a post where others can make
+                comments. We also added a feature that allows users to join chat
+                rooms within a specific post where they can discuss the topic at
+                hand in more depth.
               </p>
             </Grid>
-            <Grid item className={classes.tech}>
+            <Grid item>
               <Typography variant="h4" className={classes.jump}>
                 Built Using:
               </Typography>
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.apollographql.com/"
-              >
-                apollo/graphql
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://react-redux.js.org/"
-              >
-                React Redux
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/popper.js"
-              >
-                popper.js
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/query-string"
-              >
-                query-string
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/react"
-              >
-                react
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/react-emoji"
-              >
-                react-emoji
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/react-scroll-to-bottom"
-              >
-                react-scroll-to-bottom
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/react-spinners"
-              >
-                react-spinners
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/socket.io-client"
-              >
-                socket.io-client
-              </a>
-              , and{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/tailwindcss"
-              >
-                tailwindcss.
-              </a>
+              <p className={classes.tech}>
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.apollographql.com/"
+                >
+                  apollo/graphql
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://react-redux.js.org/"
+                >
+                  React Redux
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/popper.js"
+                >
+                  popper.js
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/query-string"
+                >
+                  query-string
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/react"
+                >
+                  react
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/react-emoji"
+                >
+                  react-emoji
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/react-scroll-to-bottom"
+                >
+                  react-scroll-to-bottom
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/react-spinners"
+                >
+                  react-spinners
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/socket.io-client"
+                >
+                  socket.io-client
+                </a>
+                , and{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/tailwindcss"
+                >
+                  tailwindcss.
+                </a>
+              </p>
             </Grid>
           </Grid>
         </Grid>

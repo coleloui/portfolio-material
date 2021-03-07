@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import MapleValley from "../Photo/MapleValley.png";
+import MapleValley from "../Photo/MapleValleyNew.png";
 import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
   },
   walls: {
-    marginTop: theme.spacing(7),
+    marginBottom: theme.spacing(7),
     marginRight: theme.spacing(5),
   },
   noshow: {

@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "5px solid #482880",
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.25))",
   },
+  space: {
+    marginTop: "10px",
+  },
   colorMe: {
     color: "#482880",
   },
@@ -32,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
   },
   right: {
     marginRight: "15px",
+    marginTop: "5px",
+  },
+  emailer: {
+    color: "#482880",
+    fontWeight: "bold",
+    fontSize: 20,
   },
 }));
 
@@ -60,6 +69,32 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const shortInsert = () => {
+    setTimeout(bigWinInsert, 0);
+    setTimeout(clearMe, 5000);
+  };
+
+  const bigWinInsert = () => {
+    if (bigWin === "success") {
+      return (
+        <div id="success" className={classes.emailer}>
+          <p>Your message has been sent!</p>
+        </div>
+      );
+    } else if (bigWin === "error") {
+      return (
+        <div id="error" className={classes.emailer}>
+          <p>An error occured while submitting the form.</p>
+        </div>
+      );
+    } else return "";
+  };
+
+  const clearMe = () => {
+    setBigWin("");
+  };
+
   return (
     <Grid container alignItems="center" direction="column" id="contact">
       <Grid item>
@@ -67,11 +102,11 @@ export default function Contact() {
           Lets Work Together!
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid item>{bigWinInsert()}</Grid>
+      <Grid item className={classes.space}>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            console.log(e.target);
             formData.subject = contactSubject;
             setBigWin("");
             const res = await fetch("/.netlify/functions/contact", {
@@ -85,8 +120,10 @@ export default function Contact() {
               // alert("Message Sent");
               setBigWin("success");
               updateFormData(() => initialFormData);
+              shortInsert();
             } else {
               setBigWin("error");
+              shortInsert();
             }
             console.log("res", res);
           }}
@@ -142,6 +179,7 @@ export default function Contact() {
                   required
                   label="Give me some info!"
                   multiline
+                  variant="filled"
                   rows={6}
                   name="message"
                   onChange={handleChange}
@@ -150,57 +188,6 @@ export default function Contact() {
               </FormControl>
             </Grid>
           </Grid>
-          {/* <input
-              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-none focus:shadow-outline"
-              name="name"
-              type="text"
-              value={formData.name}
-              placeholder="John Snow"
-              onChange={handleChange}
-            /> */}
-          {/* <label htmlFor="email" className="block text-sm font-bold underline">
-            Email
-          </label>
-          <input
-            className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-none focus:shadow-outline"
-            name="email"
-            type="email"
-            value={formData.email}
-            placeholder="john.snow@placeholder.com"
-            onChange={handleChange}
-          /> */}
-          {/* <label
-            htmlFor="message"
-            className="block text-sm font-bold underline"
-          >
-            Message
-          </label> */}
-          {/* <textarea
-            className="form-textarea block shadow appearance-none border rounded w-full py-2 px-3 mb-2 leading-tight focus:outline-none focus:shadow-outline"
-            rows="5"
-            name="message"
-            value={formData.message}
-            placeholder="Hello!"
-            onChange={handleChange}
-          ></textarea>
-          <button
-            className="bg-teal-400 hover:bg-teal-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline border-4 border-teal-600"
-            type="submit"
-          >
-            Send
-          </button> */}
-          <div>
-            {bigWin === "success" && (
-              <div id="success">
-                <p>Your message has been sent!</p>
-              </div>
-            )}
-            {bigWin === "error" && (
-              <div id="error">
-                <p>An error occured while submitting the form.</p>
-              </div>
-            )}
-          </div>
         </form>
       </Grid>
     </Grid>

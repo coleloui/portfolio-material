@@ -3,7 +3,7 @@ import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import PokePic from "../Photo/pogodex.png";
+import PokePic from "../Photo/pogo.png";
 
 const useStyles = makeStyles((theme) => ({
   size: {
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
   },
   walls: {
-    marginTop: theme.spacing(7),
     marginRight: theme.spacing(5),
   },
   noshow: {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Grid, makeStyles, Slide } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import MapleValleyPic from "../Photo/MapleValley.png";
+import MapleValleyPic from "../Photo/MapleValleyNew.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LaunchIcon from "@material-ui/icons/Launch";
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   tech: {
     lineHeight: 2,
     textAlign: "left",
-    paddingLeft: "10px",
+    marginLeft: "10px",
     fontSize: "15px",
   },
   jump: {
@@ -98,97 +98,100 @@ export default function MapleValley() {
                 </a>
               </Typography>
               <p className={classes.lines}>
-                is an online registration system for volunteers and parents of
-                campers attending the Girl Scouts Maple Valley Day Camp. This
-                will replace paper registration and facilitate camp planning by
-                allowing registration details to be easily shared to the camp
-                planning committee.
+                Built to replace an outdated paper system, this online
+                registration system will be utilized two fold. It will allow the
+                volunteers and parents of campers attending the Girl Scouts
+                Maple Valley Day Camp to register for camp and will facilitate
+                camp planning by allowing registration details to be easily
+                shared to the camp committee.
               </p>
             </Grid>
-            <Grid item className={classes.tech}>
+            <Grid item>
               <Typography variant="h4" className={classes.jump}>
                 Built Using:
               </Typography>
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://expressjs.com/"
-              >
-                express
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/express-handlebars"
-              >
-                express-handlebars
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.npmjs.com/package/express-session"
-              >
-                express-session
-              </a>
-              ,{" "}
-              <a
-                className={classes.link}
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://sequelize.org/"
-              >
-                sequelize
-              </a>
-              ,{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://www.npmjs.com/package/connect-session-sequelize"
-              >
-                connect-session-sequelize
-              </a>
-              ,{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://www.npmjs.com/package/mysql2"
-              >
-                mysql2
-              </a>
-              ,{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://www.npmjs.com/package/bcrypt"
-              >
-                bcrypt
-              </a>
-              ,{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://nodemailer.com/about/"
-              >
-                nodemailer
-              </a>
-              , and{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://bulma.io/"
-              >
-                Bulma.
-              </a>
+              <p className={classes.tech}>
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://expressjs.com/"
+                >
+                  express
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/express-handlebars"
+                >
+                  express-handlebars
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.npmjs.com/package/express-session"
+                >
+                  express-session
+                </a>
+                ,{" "}
+                <a
+                  className={classes.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://sequelize.org/"
+                >
+                  sequelize
+                </a>
+                ,{" "}
+                <a
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  target="_blank"
+                  href="https://www.npmjs.com/package/connect-session-sequelize"
+                >
+                  connect-session-sequelize
+                </a>
+                ,{" "}
+                <a
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  target="_blank"
+                  href="https://www.npmjs.com/package/mysql2"
+                >
+                  mysql2
+                </a>
+                ,{" "}
+                <a
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  target="_blank"
+                  href="https://www.npmjs.com/package/bcrypt"
+                >
+                  bcrypt
+                </a>
+                ,{" "}
+                <a
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  target="_blank"
+                  href="https://nodemailer.com/about/"
+                >
+                  nodemailer
+                </a>
+                , and{" "}
+                <a
+                  rel="noopener noreferrer"
+                  className={classes.link}
+                  target="_blank"
+                  href="https://bulma.io/"
+                >
+                  Bulma.
+                </a>
+              </p>
             </Grid>
           </Grid>
         </Grid>

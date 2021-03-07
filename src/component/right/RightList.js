@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
   },
   walls: {
-    marginTop: theme.spacing(7),
     marginRight: theme.spacing(5),
+    marginBottom: theme.spacing(7),
   },
   noshow: {
     visibility: "hidden",
