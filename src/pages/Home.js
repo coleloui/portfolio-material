@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import Center from "../component/Center";
+import { Center } from "../component/Center";
 import Header from "../component/Header";
 import BigFoot from "../component/BigFoot";
 import Right from "../component/Right";
