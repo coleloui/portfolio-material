@@ -1,9 +1,10 @@
 import React from "react";
 import { makeStyles, Grid } from "@material-ui/core";
-import Bio from "./center/CenterBio";
-import RocketList from "./center/CenterRocketList";
-import MapleValley from "./center/CenterMapleValley";
-import PokeGoDex from "./center/CenterPokeGoDex";
+import { useSelector } from "react-redux";
+import CenterBio from "./center/CenterBio";
+import CenterRocketList from "./center/CenterRocketList";
+import CenterMapleValley from "./center/CenterMapleValley";
+import CenterPokeGoDex from "./center/CenterPokeGoDex";
 
 const useStyles = makeStyles((theme) => ({
   top: {
@@ -19,13 +20,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Center() {
   const classes = useStyles();
+
+  const Bio = useSelector((state) => state.Bio);
+  const RocketList = useSelector((state) => state.RocketList);
+  const MapleValley = useSelector((state) => state.MapleValley);
+  const PokeGoDex = useSelector((state) => state.PokeGoDex);
+
   return (
     <Grid container space={3} className={classes.top} maxwidth="lg">
       <Grid item>
-        <Bio />
-        <RocketList />
-        <MapleValley />
-        <PokeGoDex />
+        {Bio ? <CenterBio /> : ""}
+        {RocketList ? <CenterRocketList /> : ""}
+        {MapleValley ? <CenterMapleValley /> : ""}
+        {PokeGoDex ? <CenterPokeGoDex /> : ""}
       </Grid>
     </Grid>
   );

@@ -4,9 +4,9 @@ export const BIO = () => {
   };
 };
 
-export const RESET = () => {
+export const SHOW = () => {
   return {
-    type: "RESET",
+    type: "SHOW",
   };
 };
 
@@ -25,5 +25,11 @@ export const MAPLEVALLEY = () => {
 export const POKEGODEX = () => {
   return {
     type: "POKEGODEX",
+  };
+};
+
+export const RESET = () => {
+  return {
+    type: "RESET",
   };
 };

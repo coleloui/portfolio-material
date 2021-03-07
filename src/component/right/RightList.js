@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import RocketList from "../Photo/RocketList.png";
+import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   size: {
@@ -14,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     backgroundImage: `url(${RocketList})`,
     backgroundSize: "cover",
+    "&:hover": {
+      opacity: 0.5,
+    },
+    "&:hover svg": {
+      visibility: "visible",
+    },
   },
   looks: {
     fontWeight: "bold",
@@ -22,12 +29,6 @@ const useStyles = makeStyles((theme) => ({
   walls: {
     marginTop: theme.spacing(7),
     marginRight: theme.spacing(5),
-    "&:hover": {
-      opacity: 0.5,
-    },
-    "&:hover svg": {
-      visibility: "visible",
-    },
   },
   noshow: {
     visibility: "hidden",
@@ -42,8 +43,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RightList() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
+  const BioRight = useSelector((state) => state.BioRight);
   const RocketListRight = useSelector((state) => state.RocketListRight);
+  const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
+  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+
+  const moveRocketList = () => {
+    if (BioRight === false) {
+      dispatch(BIO());
+      dispatch(ROCKETLIST());
+    } else if (MapleValleyRight === false) {
+      dispatch(MAPLEVALLEY());
+      dispatch(ROCKETLIST());
+    } else if (PokeGoDexRight === false) {
+      dispatch(POKEGODEX());
+      dispatch(ROCKETLIST());
+    } else dispatch(ROCKETLIST());
+  };
 
   return (
     <Grow in={RocketListRight}>
@@ -57,7 +75,13 @@ export default function RightList() {
         <Typography variant="h4" className={classes.looks}>
           RocketList
         </Typography>
-        <div title="RocketList" className={classes.size}>
+        <div
+          title="RocketList"
+          className={classes.size}
+          onClick={() => {
+            moveRocketList();
+          }}
+        >
           <FullscreenIcon className={classes.noshow} />
         </div>
       </Grid>

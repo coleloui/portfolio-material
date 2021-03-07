@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import MapleValley from "../Photo/MapleValley.png";
+import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   size: {
@@ -14,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     backgroundImage: `url(${MapleValley})`,
     backgroundSize: "cover",
+    "&:hover": {
+      opacity: 0.5,
+    },
+    "&:hover svg": {
+      visibility: "visible",
+    },
   },
   looks: {
     fontWeight: "bold",
@@ -22,12 +29,6 @@ const useStyles = makeStyles((theme) => ({
   walls: {
     marginTop: theme.spacing(7),
     marginRight: theme.spacing(5),
-    "&:hover": {
-      opacity: 0.5,
-    },
-    "&:hover svg": {
-      visibility: "visible",
-    },
   },
   noshow: {
     visibility: "hidden",
@@ -42,8 +43,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RightValley() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
+  const BioRight = useSelector((state) => state.BioRight);
+  const RocketListRight = useSelector((state) => state.RocketListRight);
   const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
+  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+
+  const moveMapleValley = () => {
+    if (BioRight === false) {
+      dispatch(BIO());
+      dispatch(MAPLEVALLEY());
+    } else if (RocketListRight === false) {
+      dispatch(ROCKETLIST());
+      dispatch(MAPLEVALLEY());
+    } else if (PokeGoDexRight === false) {
+      dispatch(POKEGODEX());
+      dispatch(MAPLEVALLEY());
+    } else dispatch(MAPLEVALLEY());
+  };
 
   return (
     <Grow in={MapleValleyRight}>
@@ -56,7 +74,13 @@ export default function RightValley() {
         <Typography variant="h4" className={classes.looks}>
           Maple Valley
         </Typography>
-        <div title="Maple Valley" className={classes.size}>
+        <div
+          title="Maple Valley"
+          className={classes.size}
+          onClick={() => {
+            moveMapleValley();
+          }}
+        >
           <FullscreenIcon className={classes.noshow} />
         </div>
       </Grid>

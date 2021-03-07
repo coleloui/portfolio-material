@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import PokePic from "../Photo/pogodex.png";
 
@@ -14,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     backgroundImage: `url(${PokePic})`,
     backgroundSize: "cover",
+    "&:hover": {
+      opacity: 0.5,
+    },
+    "&:hover svg": {
+      visibility: "visible",
+    },
   },
   looks: {
     fontWeight: "bold",
@@ -22,12 +29,6 @@ const useStyles = makeStyles((theme) => ({
   walls: {
     marginTop: theme.spacing(7),
     marginRight: theme.spacing(5),
-    "&:hover": {
-      opacity: 0.5,
-    },
-    "&:hover svg": {
-      visibility: "visible",
-    },
   },
   noshow: {
     visibility: "hidden",
@@ -42,8 +43,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RightGoDex() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
+  const BioRight = useSelector((state) => state.BioRight);
+  const RocketListRight = useSelector((state) => state.RocketListRight);
+  const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
   const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+
+  const movePoke = () => {
+    if (MapleValleyRight === false) {
+      dispatch(MAPLEVALLEY());
+      dispatch(POKEGODEX());
+    } else if (RocketListRight === false) {
+      dispatch(ROCKETLIST());
+      dispatch(POKEGODEX());
+    } else if (BioRight === false) {
+      dispatch(BIO());
+      dispatch(POKEGODEX());
+    } else dispatch(POKEGODEX());
+  };
 
   return (
     <Grow in={PokeGoDexRight}>
@@ -56,7 +74,13 @@ export default function RightGoDex() {
         <Typography variant="h4" className={classes.looks}>
           Pok&eacute;GoDex
         </Typography>
-        <div title="pokemon go dex" className={classes.size}>
+        <div
+          title="pokemon go dex"
+          className={classes.size}
+          onClick={() => {
+            movePoke();
+          }}
+        >
           {" "}
           <FullscreenIcon className={classes.noshow} />
         </div>

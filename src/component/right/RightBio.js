@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Niko from "../Photo/Niko.jpg";
 
@@ -14,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     backgroundImage: `url(${Niko})`,
     backgroundSize: "cover",
+    "&:hover": {
+      opacity: 0.5,
+    },
+    "&:hover svg": {
+      visibility: "visible",
+    },
   },
   looks: {
     fontWeight: "bold",
@@ -22,12 +29,6 @@ const useStyles = makeStyles((theme) => ({
   walls: {
     marginTop: theme.spacing(7),
     marginRight: theme.spacing(5),
-    "&:hover": {
-      opacity: 0.5,
-    },
-    "&:hover svg": {
-      visibility: "visible",
-    },
   },
   noshow: {
     visibility: "hidden",
@@ -42,11 +43,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RightBio() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   const BioRight = useSelector((state) => state.BioRight);
+  const RocketListRight = useSelector((state) => state.RocketListRight);
+  const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
+  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+
+  const moveBio = () => {
+    if (MapleValleyRight === false) {
+      dispatch(MAPLEVALLEY());
+      dispatch(BIO());
+    } else if (RocketListRight === false) {
+      dispatch(ROCKETLIST());
+      dispatch(BIO());
+    } else if (PokeGoDexRight === false) {
+      dispatch(POKEGODEX());
+      dispatch(BIO());
+    } else dispatch(BIO());
+  };
 
   return (
-    <Grow in={BioRight}>
+    <Grow in={BioRight} mountOnEnter unmountOnExit>
       <Grid
         container
         direction="column"
@@ -56,7 +74,13 @@ export default function RightBio() {
         <Typography variant="h4" className={classes.looks}>
           About Me
         </Typography>
-        <div title="Louis & Niko" className={classes.size}>
+        <div
+          title="Louis & Niko"
+          className={classes.size}
+          onClick={() => {
+            moveBio();
+          }}
+        >
           <FullscreenIcon className={classes.noshow} />
         </div>
       </Grid>

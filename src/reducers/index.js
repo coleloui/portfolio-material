@@ -7,6 +7,7 @@ import MapleValley from "./MapleValley";
 import MapleValleyRight from "./MapleValleyRight";
 import PokeGoDex from "./PokeGoDex";
 import PokeGoDexRight from "./PokeGoDexRight";
+import RightSide from "./RightSide";
 
 const allReducer = combineReducers({
   Bio,
@@ -17,6 +18,7 @@ const allReducer = combineReducers({
   MapleValleyRight,
   PokeGoDex,
   PokeGoDexRight,
+  RightSide,
 });
 
 export default allReducer;
