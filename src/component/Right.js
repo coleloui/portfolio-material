@@ -56,7 +56,12 @@ export default function Right() {
   };
 
   return (
-    <Grid container diretion="column" alignContent="center" justify="center">
+    <Grid
+      container
+      diretion="column"
+      alignItems="space-between"
+      justify="center"
+    >
       {RightSide ? (
         <Grid item>
           <h2 className={classes.projects}>

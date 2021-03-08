@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
   tails: {
     [theme.breakpoints.up("sm")]: {
       bottom: 0,
-      position: "fixed",
     },
   },
 }));

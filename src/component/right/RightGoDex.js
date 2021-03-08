@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   walls: {
     marginRight: theme.spacing(5),
+    marginBottom: theme.spacing(5),
   },
   noshow: {
     visibility: "hidden",
