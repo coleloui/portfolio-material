@@ -8,11 +8,17 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "20px",
       marginLeft: "10px",
     },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "10px",
+    },
     display: "flex",
     justifyContent: "center",
   },
   big: {
     fontWeight: "bold",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 75,
+    },
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.35))",
   },
 }));

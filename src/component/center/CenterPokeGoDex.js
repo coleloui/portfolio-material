@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, makeStyles, Slide } from "@material-ui/core";
+import { Typography, Grid, makeStyles, Slide, Hidden } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import PokeGoDexPic from "../Photo/pogo.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -29,9 +29,21 @@ const useStyles = makeStyles((theme) => ({
   large: {
     marginTop: "20px",
     marginRight: "20px",
-    marginLeft: theme.spacing(10),
-    width: theme.spacing(75),
-    height: "auto",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: theme.spacing(1),
+      width: theme.spacing(32),
+      height: theme.spacing(37),
+    },
+    [theme.breakpoints.down("xl")]: {
+      marginLeft: theme.spacing(10),
+      width: theme.spacing(75),
+      height: "auto",
+    },
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: theme.spacing(5),
+      width: theme.spacing(42),
+      height: theme.spacing(47),
+    },
     boxShadow: theme.shadows[15],
     marginBottom: "10px",
     borderRadius: "15px",
@@ -64,20 +76,22 @@ export default function PokeGoDex() {
   return (
     <Slide direction="right" in={PokeGoDex} mountOnEnter unmountOnExit>
       <Grid container direction="row" alignItems="center">
-        <Grid item>
-          <a
-            href="https://dionleung14.github.io/Pokemon-GO-Virtual-Dex/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={PokeGoDexPic}
-              alt="pokegodex home"
-              className={classes.large}
-            />
-          </a>
-        </Grid>
-        <Grid item sm={5}>
+        <Hidden mdDown>
+          <Grid item>
+            <a
+              href="https://dionleung14.github.io/Pokemon-GO-Virtual-Dex/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={PokeGoDexPic}
+                alt="pokegodex home"
+                className={classes.large}
+              />
+            </a>
+          </Grid>
+        </Hidden>
+        <Grid item xs={9} md={8} lg={5}>
           <Grid container direction="column" className={classes.divider}>
             <Grid item>
               <Typography className={classes.jump} variant="h3">

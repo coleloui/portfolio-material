@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, makeStyles, Slide } from "@material-ui/core";
+import { Typography, Grid, makeStyles, Slide, Hidden } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import MapleValleyPic from "../Photo/MapleValleyNew.png";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -32,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(10),
     width: theme.spacing(75),
     height: "auto",
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: theme.spacing(5),
+      width: theme.spacing(42),
+      height: theme.spacing(47),
+    },
     boxShadow: theme.shadows[15],
     marginBottom: "10px",
     borderRadius: "15px",
@@ -64,20 +69,22 @@ export default function MapleValley() {
   return (
     <Slide direction="right" in={MapleValley} mountOnEnter unmountOnExit>
       <Grid container direction="row" alignItems="center">
-        <Grid item>
-          <a
-            href="https://protected-lowlands-08660.herokuapp.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              alt="maplevalleycamp"
-              src={MapleValleyPic}
-              className={classes.large}
-            />
-          </a>
-        </Grid>
-        <Grid item sm={5}>
+        <Hidden mdDown>
+          <Grid item>
+            <a
+              href="https://protected-lowlands-08660.herokuapp.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt="maplevalleycamp"
+                src={MapleValleyPic}
+                className={classes.large}
+              />
+            </a>
+          </Grid>
+        </Hidden>
+        <Grid item xs={10} md={8} lg={5}>
           <Grid container direction="column" className={classes.divider}>
             <Grid item>
               <Typography className={classes.jump} variant="h3">

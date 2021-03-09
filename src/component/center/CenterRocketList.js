@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, makeStyles, Slide } from "@material-ui/core";
+import { Typography, Grid, makeStyles, Slide, Hidden } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LaunchIcon from "@material-ui/icons/Launch";
@@ -32,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(10),
     width: theme.spacing(75),
     height: "auto",
+    [theme.breakpoints.down("lg")]: {
+      marginLeft: theme.spacing(5),
+      width: theme.spacing(42),
+      height: theme.spacing(47),
+    },
     boxShadow: theme.shadows[15],
     marginBottom: "10px",
     borderRadius: "15px",
@@ -64,20 +69,22 @@ export default function RocketList() {
   return (
     <Slide direction="right" in={RocketList} mountOnEnter unmountOnExit>
       <Grid container direction="row" alignItems="center">
-        <Grid item>
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="http://rocketlist.herokuapp.com/"
-          >
-            <img
-              src={RocketListPic}
-              alt="RocketList home"
-              className={classes.large}
-            />
-          </a>
-        </Grid>
-        <Grid item sm={5}>
+        <Hidden mdDown>
+          <Grid item>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="http://rocketlist.herokuapp.com/"
+            >
+              <img
+                src={RocketListPic}
+                alt="RocketList home"
+                className={classes.large}
+              />
+            </a>
+          </Grid>
+        </Hidden>
+        <Grid item xs={9} md={8} lg={5}>
           <Grid container direction="column" className={classes.divider}>
             <Grid item>
               <Typography className={classes.jump} variant="h3">
