@@ -64,7 +64,7 @@ export default function Right() {
             <ExpandMoreIcon
               className={classes.show}
               onClick={() => {
-                dispatch(SHOW());
+                dispatch(SHOW())
               }}
             />
           </h2>
@@ -79,7 +79,7 @@ export default function Right() {
           <ExpandLessIcon
             className={classes.show}
             onClick={() => {
-              dispatch(SHOW());
+              dispatch(SHOW())
             }}
           />
         </Grid>

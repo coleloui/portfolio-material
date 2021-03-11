@@ -6,7 +6,7 @@ export default function App() {
   return (
     <React.Fragment>
       <Cssbaseline />
-      <Home />;
+      <Home />
     </React.Fragment>
   );
 }

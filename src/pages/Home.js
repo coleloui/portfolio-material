@@ -18,5 +18,5 @@ export default function Home() {
         <Right />
       </Grid>
     </Grid>
-  );
+  )
 }

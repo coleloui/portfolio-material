@@ -4,6 +4,7 @@ const BioRight = (state = false, action) => {
       return !state;
     case "RESET":
       return (state = false);
+    case "PHOTO":
     default:
       return state;
   }
