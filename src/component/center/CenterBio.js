@@ -1,56 +1,57 @@
-import React from "react";
-import { makeStyles, Grid, Typography, Slide, Hidden } from "@material-ui/core";
-import { useSelector } from "react-redux";
-import Niko from "../Photo/Niko.jpg";
+import React from 'react';
+import { makeStyles, Grid, Typography, Slide, Hidden } from '@material-ui/core';
+import { useSelector } from 'react-redux';
+import Niko from '../Photo/Niko.jpg';
+import { BioLinks } from '../ProjectLinks';
 
 const useStyles = makeStyles((theme) => ({
   lines: {
     lineHeight: 3,
-    textAlign: "left",
-    paddingLeft: "10px",
-    fontSize: "15px",
+    textAlign: 'left',
+    paddingLeft: '10px',
+    fontSize: '15px',
   },
   tech: {
     lineHeight: 2,
-    textAlign: "left",
-    paddingLeft: "10px",
-    fontSize: "15px",
+    textAlign: 'left',
+    paddingLeft: '10px',
+    fontSize: '15px',
   },
   divider: {
-    borderLeft: "5px solid #482880",
+    borderLeft: '5px solid #482880',
   },
   jump: {
-    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
-    fontWeight: "bold",
+    filter: 'drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))',
+    fontWeight: 'bold',
   },
   link: {
-    color: "#482880",
-    textDecoration: "none",
-    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
-    "&:hover": {
-      color: "gray",
-      textDecoration: "underline",
+    color: '#482880',
+    textDecoration: 'none',
+    filter: 'drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))',
+    '&:hover': {
+      color: 'gray',
+      textDecoration: 'underline',
     },
   },
   nolink: {
-    color: "#482880",
-    textDecoration: "none",
-    filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
+    color: '#482880',
+    textDecoration: 'none',
+    filter: 'drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))',
   },
   large: {
-    marginTop: "20px",
-    marginRight: "20px",
+    marginTop: '20px',
+    marginRight: '20px',
     marginLeft: theme.spacing(15),
     width: theme.spacing(42),
     height: theme.spacing(47),
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.down('lg')]: {
       marginLeft: theme.spacing(10),
       width: theme.spacing(42),
       height: theme.spacing(47),
     },
     boxShadow: theme.shadows[15],
-    marginBottom: "10px",
-    borderRadius: "15px",
+    marginBottom: '10px',
+    borderRadius: '15px',
   },
 }));
 
@@ -60,15 +61,15 @@ export default function Bio() {
   const Bio = useSelector((state) => state.Bio);
 
   return (
-    <Slide direction="right" in={Bio} mountOnEnter unmountOnExit>
-      <Grid container direction="row" alignItems="center">
+    <Slide direction='right' in={Bio} mountOnEnter unmountOnExit>
+      <Grid container direction='row' alignItems='center'>
         <Hidden mdDown>
           <Grid item>
-            <img alt="Louis and Niko" src={Niko} className={classes.large} />
+            <img alt='Louis and Niko' src={Niko} className={classes.large} />
           </Grid>
         </Hidden>
         <Grid item xs={10} md={8} lg={6}>
-          <Grid container direction="column" className={classes.divider}>
+          <Grid container direction='column' className={classes.divider}>
             <Grid item>
               <p className={classes.lines}>
                 I am a passionate Full Stack Web Developer from from Tampa,
@@ -82,121 +83,21 @@ export default function Bio() {
               </p>
             </Grid>
             <Grid item className={classes.tech}>
-              <Typography variant="h4" className={classes.jump}>
+              <Typography variant='h4' className={classes.jump}>
                 Some of the technologies I use:
               </Typography>
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
-              >
-                HTML5,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-              >
-                CSS,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://www.javascript.com/"
-              >
-                JavaScript,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://jquery.com/"
-              >
-                JQuery,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://getbootstrap.com/"
-              >
-                Bootstrap,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://material-ui.com/"
-              >
-                Material-UI,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://tailwindcss.com/"
-              >
-                Tailwind CSS,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://expressjs.com/"
-              >
-                Express.js,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://expressjs.com/"
-              >
-                React.js,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://expressjs.com/"
-              >
-                Node.js,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://expressjs.com/"
-              >
-                MongoDB,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://expressjs.com/"
-              >
-                MySQL,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://en.wikipedia.org/wiki/Command-line_interface"
-              >
-                CLI,
-              </a>{" "}
-              <a
-                rel="noopener noreferrer"
-                className={classes.link}
-                target="_blank"
-                href="https://git-scm.com/"
-              >
-                Git,
-              </a>{" "}
+              {BioLinks.map(({ tech, link }) => (
+                <a
+                  key={tech}
+                  rel='noopener noreferrer'
+                  className={classes.link}
+                  target='_blank'
+                  href={link}
+                >
+                  {' '}
+                  {tech},
+                </a>
+              ))}{' '}
               <span className={classes.nolink}>Database Theory and more!</span>
             </Grid>
           </Grid>

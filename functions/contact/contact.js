@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const { escape, isEmail, normalizeEmail } = require("validator");
-const { inspect } = require("util");
-const { SES, AWSError } = require("aws-sdk");
-const { SendEmailRequest, SendEmailResponse } = require("aws-sdk/clients/ses");
+const mongoose = require('mongoose');
+const { escape, isEmail, normalizeEmail } = require('validator');
+const { inspect } = require('util');
+const { SES, AWSError } = require('aws-sdk');
+const { SendEmailRequest, SendEmailResponse } = require('aws-sdk/clients/ses');
 
 const {
   SES_EMAIL,
@@ -45,7 +45,7 @@ const sendEmailNotification = async (notification) => {
 
   const data = await ses.sendEmail(params).promise();
 
-  console.log("sendEmailNotification data", data);
+  console.log('sendEmailNotification data', data);
 
   return true;
 };
@@ -70,16 +70,16 @@ const messageSchema = new Schema({
   },
   time: { type: Date, default: Date.now },
 });
-const Message = mongoose.model("Message", messageSchema);
+const Message = mongoose.model('Message', messageSchema);
 
 exports.handler = async function (event, context) {
   try {
     const req = JSON.parse(event.body);
-    console.log("req");
+    console.log('req');
     console.log(req);
 
-    if (!(req.subject === "placeholder")) {
-      throw new Error("Invalid honeypot.");
+    if (!(req.subject === 'placeholder')) {
+      throw new Error('Invalid honeypot.');
     }
 
     const checkEmail = isEmail(req.email);
@@ -88,19 +88,19 @@ exports.handler = async function (event, context) {
     if (checkEmail) {
       message.email = normalizeEmail(req.email);
     } else {
-      throw new Error("Invalid email address.");
+      throw new Error('Invalid email address.');
     }
 
     message.name = escape(req.name);
     message.message = escape(req.message);
 
-    console.log("saving message... message: ", message);
+    console.log('saving message... message: ', message);
     const savedMessage = await message.save();
-    console.log("message saved! savedMessage:", savedMessage);
+    console.log('message saved! savedMessage:', savedMessage);
 
     const mail = {
-      destinations: ["coleloui18@gmail.com"],
-      subject: "Portfolio Contact Form Submission",
+      destinations: ['coleloui18@gmail.com'],
+      subject: 'Portfolio Contact Form Submission',
       html: `<h1>Portfolio Contact Form Submission</h1>
 <h3><b>Name:</b> ${message.name}</h3>
 <h3><b>Email:</b> ${message.email}</h3>
@@ -111,19 +111,19 @@ exports.handler = async function (event, context) {
     };
 
     try {
-      console.log("sending email... email:", mail);
+      console.log('sending email... email:', mail);
       const mailInfo = await sendEmailNotification(mail);
       if (!mailInfo) {
-        throw new Error("Failed to send email notification.");
+        throw new Error('Failed to send email notification.');
       }
     } catch (err) {
       console.error(err);
       return { statusCode: 500, body: err.toString() };
     } finally {
-      return { statusCode: 200, body: "" };
+      return { statusCode: 200, body: '' };
     }
   } catch (err) {
     console.error(err);
-    return { statusCode: 500, body: "" };
+    return { statusCode: 500, body: '' };
   }
 };
