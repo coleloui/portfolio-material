@@ -120,16 +120,18 @@ export default function MapleValley() {
               </Typography>
               <p className={classes.tech}>
                 {MapleLinks.map(({ tech, link }) => (
-                  <a
-                    key={tech}
-                    rel='noopener noreferrer'
-                    className={classes.link}
-                    target='_blank'
-                    href={link}
-                  >
-                    {' '}
-                    {tech},
-                  </a>
+                  <span>
+                    <a
+                      key={tech}
+                      rel='noopener noreferrer'
+                      className={classes.link}
+                      target='_blank'
+                      href={link}
+                    >
+                      {tech}
+                    </a>
+                    ,{' '}
+                  </span>
                 ))}
               </p>
             </Grid>

@@ -120,16 +120,18 @@ export default function RocketList() {
               </Typography>
               <p className={classes.tech}>
                 {RocketLinks.map(({ tech, link }) => (
-                  <a
-                    key={tech}
-                    rel='noopener noreferrer'
-                    className={classes.link}
-                    target='_blank'
-                    href={link}
-                  >
-                    {' '}
-                    {tech},
-                  </a>
+                  <span>
+                    <a
+                      key={tech}
+                      rel='noopener noreferrer'
+                      className={classes.link}
+                      target='_blank'
+                      href={link}
+                    >
+                      {tech}
+                    </a>
+                    ,{' '}
+                  </span>
                 ))}
               </p>
             </Grid>

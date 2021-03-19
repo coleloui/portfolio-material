@@ -1,5 +1,9 @@
 export const RocketLinks = [
   {
+    tech: 'React',
+    link: 'https://www.npmjs.com/package/react',
+  },
+  {
     tech: 'apollo/graphql',
     link: 'https://www.apollographql.com/',
   },
@@ -14,10 +18,6 @@ export const RocketLinks = [
   {
     tech: 'query-string',
     link: 'https://www.npmjs.com/package/query-string',
-  },
-  {
-    tech: 'React',
-    link: 'https://www.npmjs.com/package/react',
   },
   {
     tech: 'react-emoji',
@@ -99,6 +99,10 @@ export const PokeLinks = [
 ];
 export const BioLinks = [
   {
+    tech: 'React.js',
+    link: 'https://reactjs.org/',
+  },
+  {
     tech: 'HTML5',
     link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5',
   },
@@ -129,10 +133,6 @@ export const BioLinks = [
   {
     tech: 'Express.js',
     link: 'https://expressjs.com/',
-  },
-  {
-    tech: 'React.js',
-    link: 'https://reactjs.org/',
   },
   {
     tech: 'Node.js',

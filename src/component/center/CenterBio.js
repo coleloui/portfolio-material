@@ -87,16 +87,18 @@ export default function Bio() {
                 Some of the technologies I use:
               </Typography>
               {BioLinks.map(({ tech, link }) => (
-                <a
-                  key={tech}
-                  rel='noopener noreferrer'
-                  className={classes.link}
-                  target='_blank'
-                  href={link}
-                >
-                  {' '}
-                  {tech},
-                </a>
+                <span>
+                  <a
+                    key={tech}
+                    rel='noopener noreferrer'
+                    className={classes.link}
+                    target='_blank'
+                    href={link}
+                  >
+                    {tech}
+                  </a>
+                  ,{' '}
+                </span>
               ))}{' '}
               <span className={classes.nolink}>Database Theory and more!</span>
             </Grid>
