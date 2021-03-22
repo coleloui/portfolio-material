@@ -191,7 +191,4 @@ export const BioLinks = [
     link: 'https://git-scm.com/',
     ending: ', ',
   },
-  {
-    ending: 'Database Theory and more!',
-  },
 ];
