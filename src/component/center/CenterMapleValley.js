@@ -119,7 +119,7 @@ export default function MapleValley() {
                 Built Using:
               </Typography>
               <p className={classes.tech}>
-                {MapleLinks.map(({ tech, link }) => (
+                {MapleLinks.map(({ tech, link, ending }) => (
                   <span>
                     <a
                       key={tech}
@@ -130,7 +130,7 @@ export default function MapleValley() {
                     >
                       {tech}
                     </a>
-                    ,{' '}
+                    {ending}
                   </span>
                 ))}
               </p>

@@ -119,7 +119,7 @@ export default function RocketList() {
                 Built Using:
               </Typography>
               <p className={classes.tech}>
-                {RocketLinks.map(({ tech, link }) => (
+                {RocketLinks.map(({ tech, link, ending }) => (
                   <span>
                     <a
                       key={tech}
@@ -130,7 +130,7 @@ export default function RocketList() {
                     >
                       {tech}
                     </a>
-                    ,{' '}
+                    {ending}
                   </span>
                 ))}
               </p>

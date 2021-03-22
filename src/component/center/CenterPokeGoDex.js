@@ -128,7 +128,7 @@ export default function PokeGoDex() {
                 Built Using:
               </Typography>
               <p className={classes.tech}>
-                {PokeLinks.map(({ tech, link }) => (
+                {PokeLinks.map(({ tech, link, ending }) => (
                   <span>
                     <a
                       key={tech}
@@ -139,7 +139,7 @@ export default function PokeGoDex() {
                     >
                       {tech}
                     </a>
-                    ,{' '}
+                    {ending}
                   </span>
                 ))}
               </p>

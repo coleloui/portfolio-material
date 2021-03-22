@@ -86,7 +86,7 @@ export default function Bio() {
               <Typography variant='h4' className={classes.jump}>
                 Some of the technologies I use:
               </Typography>
-              {BioLinks.map(({ tech, link }) => (
+              {BioLinks.map(({ tech, link, ending }) => (
                 <span>
                   <a
                     key={tech}
@@ -97,7 +97,7 @@ export default function Bio() {
                   >
                     {tech}
                   </a>
-                  ,{' '}
+                  {ending}
                 </span>
               ))}{' '}
               <span className={classes.nolink}>Database Theory and more!</span>
