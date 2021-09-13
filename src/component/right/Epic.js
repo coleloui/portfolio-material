@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Epic() {
+export default function RightEpic() {
   const classes = useStyles();
   const dispatch = useDispatch();
 

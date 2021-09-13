@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LaunchIcon from '@material-ui/icons/Launch';
 import RocketListPic from '../Photo/RocketList.png';
-import { RocketLinks } from '../ProjectLinks';
+import { EpicLinks } from '../ProjectLinks';
 
 const useStyles = makeStyles((theme) => ({
   lines: {
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RocketList() {
+export default function Epic() {
   const classes = useStyles();
 
   const RocketList = useSelector((state) => state.RocketList);
@@ -119,7 +119,7 @@ export default function RocketList() {
                 Built Using:
               </Typography>
               <p className={classes.tech}>
-                {RocketLinks.map(({ tech, link, ending }) => (
+                {EpicLinks.map(({ tech, link, ending }) => (
                   <span>
                     <a
                       key={tech}

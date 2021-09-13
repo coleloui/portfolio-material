@@ -28,6 +28,12 @@ export const POKEGODEX = () => {
   };
 };
 
+export const EPIC = () => {
+  return {
+    type: "EPIC",
+  };
+};
+
 export const RESET = () => {
   return {
     type: "RESET",

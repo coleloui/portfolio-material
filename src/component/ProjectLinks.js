@@ -192,3 +192,30 @@ export const BioLinks = [
     ending: ', ',
   },
 ];
+export const EpicLinks = [
+  {
+    tech: 'React.js',
+    link: 'https://reactjs.org/',
+    ending: ', ',
+  },
+  {
+    tech: 'Material-UI',
+    link: 'https://material-ui.com/',
+    ending: ', ',
+  },
+  {
+    tech: 'MongoDB',
+    link: 'https://www.mongodb.com/',
+    ending: ', ',
+  },
+  {
+    tech: 'AWS-SES',
+    link: 'https://www.aws.amazon.com/ses/',
+    ending: ', ',
+  },
+  {
+    tech: 'React-Redux',
+    link: 'https://react-redux.js.org/',
+    ending: '.',
+  },
+]
