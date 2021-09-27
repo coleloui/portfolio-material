@@ -1,4 +1,4 @@
-const EpicRight = (state = false, action) => {
+const EpicRight = (state = true, action) => {
     switch (action.type) {
       case "EPIC":
         return !state;

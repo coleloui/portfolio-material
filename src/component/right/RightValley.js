@@ -3,7 +3,7 @@ import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import MapleValley from "../Photo/MapleValleyNew.png";
-import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
+import { MAPLEVALLEY, BIO, ROCKETLIST, EPIC } from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   size: {
@@ -48,7 +48,7 @@ export default function RightValley() {
   const BioRight = useSelector((state) => state.BioRight);
   const RocketListRight = useSelector((state) => state.RocketListRight);
   const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
-  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+  const EpicRight = useSelector((state) => state.EpicRight);
 
   const moveMapleValley = () => {
     if (BioRight === false) {
@@ -57,8 +57,8 @@ export default function RightValley() {
     } else if (RocketListRight === false) {
       dispatch(ROCKETLIST());
       dispatch(MAPLEVALLEY());
-    } else if (PokeGoDexRight === false) {
-      dispatch(POKEGODEX());
+    } else if (EpicRight === false) {
+      dispatch(EPIC());
       dispatch(MAPLEVALLEY());
     } else dispatch(MAPLEVALLEY());
   };

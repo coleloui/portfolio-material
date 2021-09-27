@@ -1,6 +1,6 @@
-const Epic = (state = true, action) => {
+const Epic = (state = false, action) => {
     switch (action.type) {
-      case "Epic":
+      case "EPIC":
         return !state;
       case "RESET":
         return (state = true);

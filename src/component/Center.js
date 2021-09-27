@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import CenterBio from "./center/CenterBio";
 import CenterRocketList from "./center/CenterRocketList";
 import CenterMapleValley from "./center/CenterMapleValley";
-import CenterPokeGoDex from "./center/CenterPokeGoDex";
+// import CenterPokeGoDex from "./center/CenterPokeGoDex";
+import CenterEpic from './center/CenterEpic'
 
 const useStyles = makeStyles((theme) => ({
   top: {
@@ -24,7 +25,8 @@ export const Center = () => {
   const Bio = useSelector((state) => state.Bio);
   const RocketList = useSelector((state) => state.RocketList);
   const MapleValley = useSelector((state) => state.MapleValley);
-  const PokeGoDex = useSelector((state) => state.PokeGoDex);
+  // const PokeGoDex = useSelector((state) => state.PokeGoDex);
+  const Epic = useSelector((state) => state.Epic);
 
   return (
     <Grid container space={3} className={classes.top} maxwidth="lg">
@@ -32,7 +34,8 @@ export const Center = () => {
         {Bio ? <CenterBio /> : ""}
         {RocketList ? <CenterRocketList /> : ""}
         {MapleValley ? <CenterMapleValley /> : ""}
-        {PokeGoDex ? <CenterPokeGoDex /> : ""}
+        {Epic ? <CenterEpic /> : ""}
+        {/* {PokeGoDex ? <CenterPokeGoDex /> : ""} */}
       </Grid>
     </Grid>
   );

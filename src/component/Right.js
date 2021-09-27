@@ -3,8 +3,9 @@ import { Grid, makeStyles } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import RightValley from "./right/RightValley";
 import RightList from "./right/RightList";
-import RightGoDex from "./right/RightGoDex";
+// import RightGoDex from "./right/RightGoDex";
 import RightBio from "./right/RightBio";
+import RightEpic from './right/RightEpic'
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import { SHOW } from "../actions";
@@ -28,18 +29,19 @@ export default function Right() {
   const dispatch = useDispatch();
   const RocketListRight = useSelector((state) => state.RocketListRight);
   const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
-  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+  // const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+  const EpicRight = useSelector((state) => state.EpicRight);
   const RightSide = useSelector((state) => state.RightSide);
 
   const ripBrain = () => {
-    if (RocketListRight && PokeGoDexRight === true) {
+    if (RocketListRight && EpicRight === true) {
       return (
         <Grid item>
           <RightBio />
         </Grid>
       );
     }
-    if (MapleValleyRight && PokeGoDexRight === true) {
+    if (MapleValleyRight && EpicRight === true) {
       return (
         <Grid item>
           <RightBio />
@@ -53,6 +55,20 @@ export default function Right() {
         </Grid>
       );
     }
+    // if (RocketListRight && PokeGoDexRight === true) {
+    //   return (
+    //     <Grid item>
+    //       <RightBio />
+    //     </Grid>
+    //   );
+    // }
+    // if (MapleValleyRight && PokeGoDexRight === true) {
+    //   return (
+    //     <Grid item>
+    //       <RightBio />
+    //     </Grid>
+    //   );
+    // }
   };
 
   return (
@@ -104,9 +120,9 @@ export default function Right() {
       )}
       {RightSide ? (
         ""
-      ) : PokeGoDexRight ? (
+      ) : EpicRight ? (
         <Grid item>
-          <RightGoDex />
+          <RightEpic />
         </Grid>
       ) : (
         ripBrain()

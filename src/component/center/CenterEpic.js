@@ -1,9 +1,8 @@
 import React from 'react';
 import { Typography, Grid, makeStyles, Slide, Hidden } from '@material-ui/core';
 import { useSelector } from 'react-redux';
-import GitHubIcon from '@material-ui/icons/GitHub';
 import LaunchIcon from '@material-ui/icons/Launch';
-import RocketListPic from '../Photo/RocketList.png';
+import EpicPT from '../Photo/epic-pt.jpg';
 import { EpicLinks } from '../ProjectLinks';
 
 const useStyles = makeStyles((theme) => ({
@@ -65,20 +64,20 @@ const useStyles = makeStyles((theme) => ({
 export default function Epic() {
   const classes = useStyles();
 
-  const RocketList = useSelector((state) => state.RocketList);
+  const Epic = useSelector((state) => state.Epic);
 
   return (
-    <Slide direction='right' in={RocketList} mountOnEnter unmountOnExit>
+    <Slide direction='right' in={Epic} mountOnEnter unmountOnExit>
       <Grid container direction='row' alignItems='center'>
         <Hidden mdDown>
           <Grid item>
             <a
               rel='noopener noreferrer'
               target='_blank'
-              href='http://rocketlist.herokuapp.com/'
+              href='http://epic-pt.com/'
             >
               <img
-                src={RocketListPic}
+                src={EpicPT}
                 alt='RocketList home'
                 className={classes.large}
               />
@@ -89,16 +88,9 @@ export default function Epic() {
           <Grid container direction='column' className={classes.divider}>
             <Grid item>
               <Typography className={classes.jump} variant='h3'>
-                RocketList{' '}
+                EPIC Physical Therapy{' '}
                 <a
-                  href='https://github.com/meganjacobs97/RocketList'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <GitHubIcon className={classes.center} />
-                </a>
-                <a
-                  href='http://rocketlist.herokuapp.com/'
+                  href='http://epic-pt.com/'
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -106,12 +98,7 @@ export default function Epic() {
                 </a>
               </Typography>
               <p className={classes.lines}>
-                This application is a React website built with inspiration from
-                Craigslist, Yahoo Answers, and Reddit. It allows for different
-                topics and for people to make a post where others can make
-                comments. We also added a feature that allows users to join chat
-                rooms within a specific post where they can discuss the topic at
-                hand in more depth.
+                Epic-PT is an application built for the EPIC Physical Therapy company. The application is built on React with Material-UI as the css framework. I worked on implementing the Contact and Testimonial forms that are tied to AWS-SES as well as stored in MongoAtlas. I worked with other members to deploy the site using Netlify and Cloudflare.
               </p>
             </Grid>
             <Grid item>

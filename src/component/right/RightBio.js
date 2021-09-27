@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
+import { MAPLEVALLEY, BIO, ROCKETLIST, EPIC } from "../../actions";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Niko from "../Photo/Niko.jpg";
 
@@ -48,7 +48,7 @@ export default function RightBio() {
   const BioRight = useSelector((state) => state.BioRight);
   const RocketListRight = useSelector((state) => state.RocketListRight);
   const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
-  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+  const EpicRight = useSelector((state) => state.EpicRight);
 
   const moveBio = () => {
     if (MapleValleyRight === false) {
@@ -57,8 +57,8 @@ export default function RightBio() {
     } else if (RocketListRight === false) {
       dispatch(ROCKETLIST());
       dispatch(BIO());
-    } else if (PokeGoDexRight === false) {
-      dispatch(POKEGODEX());
+    } else if (EpicRight === false) {
+      dispatch(EPIC());
       dispatch(BIO());
     } else dispatch(BIO());
   };

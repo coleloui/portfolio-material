@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles, Grid, Typography, Grow } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import RocketList from "../Photo/RocketList.png";
-import { MAPLEVALLEY, BIO, ROCKETLIST, POKEGODEX } from "../../actions";
+import EpicPT from "../Photo/epic-pt.jpg";
+import { MAPLEVALLEY, BIO, ROCKETLIST, EPIC } from "../../actions";
 
 const useStyles = makeStyles((theme) => ({
   size: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
     filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))",
     borderRadius: "15px",
-    backgroundImage: `url(${RocketList})`,
+    backgroundImage: `url(${EpicPT})`,
     backgroundSize: "cover",
     "&:hover": {
       opacity: 0.5,
@@ -48,23 +48,24 @@ export default function RightEpic() {
   const BioRight = useSelector((state) => state.BioRight);
   const RocketListRight = useSelector((state) => state.RocketListRight);
   const MapleValleyRight = useSelector((state) => state.MapleValleyRight);
-  const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
+  const EpicRight = useSelector((state) => state.EpicRight);
+  // const PokeGoDexRight = useSelector((state) => state.PokeGoDexRight);
 
-  const moveRocketList = () => {
-    if (BioRight === false) {
-      dispatch(BIO());
-      dispatch(ROCKETLIST());
-    } else if (MapleValleyRight === false) {
+  const moveEpic = () => {
+    if (MapleValleyRight === false) {
       dispatch(MAPLEVALLEY());
+      dispatch(EPIC());
+    } else if (RocketListRight === false) {
       dispatch(ROCKETLIST());
-    } else if (PokeGoDexRight === false) {
-      dispatch(POKEGODEX());
-      dispatch(ROCKETLIST());
-    } else dispatch(ROCKETLIST());
+      dispatch(EPIC());
+    } else if (BioRight === false) {
+      dispatch(BIO());
+      dispatch(EPIC());
+    } else dispatch(EPIC());
   };
 
   return (
-    <Grow in={RocketListRight}>
+    <Grow in={EpicRight}>
       <Grid
         container
         direction="column"
@@ -73,13 +74,13 @@ export default function RightEpic() {
       >
         {" "}
         <Typography variant="h4" className={classes.looks}>
-          RocketList
+          EPIC-PT
         </Typography>
         <div
-          title="RocketList"
+          title="EPIC"
           className={classes.size}
           onClick={() => {
-            moveRocketList();
+            moveEpic();
           }}
         >
           <FullscreenIcon className={classes.noshow} />
